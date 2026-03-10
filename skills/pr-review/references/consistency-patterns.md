@@ -12,12 +12,26 @@ Determine the type of change:
 - New test coverage
 - Documentation or configuration
 
-### 2. Find Similar Existing Code
+### 2. Find the Closest Existing Analog
 
-Search the codebase for similar functionality:
-- Use file naming patterns to find related code
-- Look in relevant directories
-- Search for similar class/module/function names
+Before evaluating new code for internal correctness, identify the closest existing analog in the codebase.
+
+**For new classes:**
+1. Find the existing class that serves the most similar purpose
+2. Map new methods against existing methods explicitly — don't rely on a high-level impression
+3. If substantial logic already exists in the analog (query building, data access, business rules), flag it as a duplication finding
+4. Don't assume a design pattern (composite, decorator, adapter) justifies duplicated logic — the pattern and the duplication are separate concerns
+
+**For new infrastructure components** (HTTP clients, service wrappers, external API clients, config readers, etc.):
+1. Ask first: "Does an established pattern for this component type already exist in the codebase?"
+2. Find that pattern before evaluating anything else
+3. Compare the new component against the established pattern — not just for structure, but for behavior (error handling, timeouts, retries, SSL config, dependency injection)
+4. Flag deviations as consistency findings even if the new component is internally correct
+
+**Finding analogs:**
+- Search by component type (e.g., other HTTP clients, other service wrappers)
+- Search by dependency (e.g., other classes that use the same external library)
+- Look in relevant directories for similar naming patterns
 - Check recent commits for similar work
 
 ### 3. Compare Patterns
@@ -111,7 +125,10 @@ New code places logic in the wrong layer or violates separation of concerns esta
 New code uses different error handling approach than existing code without justification.
 
 ### 🚩 Reinventing Existing Patterns
-New code implements functionality that existing helpers/utilities already provide.
+New code implements functionality that existing helpers/utilities already provide. This is easiest to miss when the new code is internally correct — correctness does not imply consistency.
+
+### 🚩 Design Pattern Accepted as Justification for Duplication
+A design pattern (composite, decorator, adapter) is correctly identified and described, but used as justification to stop checking for duplication. The pattern and the duplication are independent concerns — a composite class can still duplicate logic wholesale from the class it wraps.
 
 ### 🚩 Inconsistent Naming
 New code doesn't follow established naming conventions (e.g., `CreateUser` vs existing pattern of `UserCreate`).
