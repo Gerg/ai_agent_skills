@@ -368,6 +368,12 @@ Tests:
 
 **No test pressure:** Only JSON format is tested. XML, YAML, timeout, and retry options have no test pressure - likely over-engineered.
 
+### Test Data Should Reflect Production Invariants
+
+If the system enforces a prerequisite (e.g., a create action requires an org role before a space role can be assigned), test setup should include that prerequisite — not bypass it. Tests that violate a production-enforced invariant in their setup can pass vacuously: the scenario they test may never actually occur in production, meaning the test proves nothing.
+
+**Check:** Does the test setup reflect constraints the production system enforces? If setup bypasses a system-enforced prerequisite, the test may be validating an impossible state.
+
 ### When Speculative Code Is Acceptable
 
 **Rare cases where logic without immediate test pressure is justified:**

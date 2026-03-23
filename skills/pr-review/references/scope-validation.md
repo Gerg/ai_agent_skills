@@ -35,6 +35,15 @@ From the ticket, identify and document:
 - **Dependencies**: Does this depend on or block other work?
 - **Priority**: Is this must-have or nice-to-have?
 
+**Check beyond the AC text:**
+
+AC frequently diverges from actual decisions made during implementation. Before treating AC as ground truth, also check:
+- **Ticket comments**: Decisions, clarifications, or scope changes recorded after the ticket was written
+- **Acceptance comments**: Notes left when closing or accepting related tickets — these often document why AC was modified or superseded
+- **Linked/parent tickets**: If AC was copied from a parent or related ticket, check that ticket's comments for decisions that weren't propagated back
+
+A criterion in the AC may have been superseded by a decision recorded only in a comment elsewhere.
+
 ### 2. Map Implementation to Requirements
 
 **Principle: Validate explicitly, don't infer from code patterns**
