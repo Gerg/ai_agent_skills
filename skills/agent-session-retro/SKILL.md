@@ -29,6 +29,8 @@ End-of-session retrospectives help identify:
 
 ### 1. Review the Session
 
+**Critical:** Make sure to review the contents of the session in its entirety. Do NOT rely on summarized context or assumptions!
+
 **What was accomplished?**
 - Main objectives and outcomes
 - Tickets/tasks completed
