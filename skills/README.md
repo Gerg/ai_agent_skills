@@ -349,7 +349,7 @@ pr-review/references/
 └── code-quality.md -> ../../_shared/code-quality.md
 ```
 
-See [_shared/README.md](_shared/README.md) for details on shared resources.
+See [_shared/README.md](_shared/README.md) for implementation details, multi-source considerations, and design rationale.
 
 ### Examples of New Skills
 
