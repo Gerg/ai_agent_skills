@@ -49,16 +49,40 @@ For each major concept:
 
 ## 6. Review for Quality
 
-Check:
-- [ ] Single, clear purpose
-- [ ] Composable with other skills
-- [ ] Prerequisites stated
-- [ ] Examples provided
-- [ ] Common mistakes covered
-- [ ] Integration guidance included
-- [ ] No duplication with other skills
-- [ ] Generic (not project-specific)
-- [ ] Clear, actionable guidance
+### Content Quality
+- [ ] Clear, focused purpose
+- [ ] Appropriate scope (not too broad or narrow)
+- [ ] Concrete examples provided
+- [ ] Anti-patterns documented
+- [ ] Prescriptive guidance (not just options)
+- [ ] Sharp and opinionated (would agent behave differently with this skill?)
+- [ ] Consistent terminology
+- [ ] No unnecessary jargon
+- [ ] Skill affirmation statement present
+
+### Structure Quality
+- [ ] Logical organization
+- [ ] Clear heading hierarchy
+- [ ] Consistent formatting
+- [ ] Easy to scan
+- [ ] Quick reference available (if needed)
+- [ ] No duplicate content between sections
+- [ ] Each concept explained once
+- [ ] Cross-references used instead of repetition
+
+### Integration Quality
+- [ ] Context clearly stated (for core skills)
+- [ ] Prerequisites clearly stated (for extensions)
+- [ ] References well-organized and linked
+- [ ] Navigation to references provided
+- [ ] Links to related skills (different concerns)
+- [ ] Affirmation statements in all reference files
+
+### Usability Quality
+- [ ] Easy to find (good naming)
+- [ ] Easy to understand (clear writing)
+- [ ] Easy to apply (actionable guidance)
+- [ ] Easy to reference (good structure)
 
 ## 7. Update the README
 
@@ -69,6 +93,14 @@ Add the new skill to:
 - Related skills sections
 
 ## Skill Maintenance
+
+**Healthy habits:**
+- Start small — begin with core content, expand over time
+- Get feedback — test with real users, iterate based on results
+- Keep it current — update as practices evolve
+- Link generously — connect related skills and cross-references
+- Document mistakes — capture common errors as anti-patterns when discovered
+- Maintain quality — run through the Quality Checklist (step 6) periodically
 
 ### When to Update
 - New patterns emerge
@@ -84,7 +116,6 @@ Add the new skill to:
 4. Update examples
 5. Review integration guidance
 6. Update README if needed
-7. Notify users of changes
 
 ### Versioning (Optional)
 For major changes, consider:

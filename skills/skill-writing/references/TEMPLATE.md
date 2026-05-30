@@ -14,7 +14,15 @@ description: Brief description of what this skill does and when to use it. Inclu
 
 Brief description of what this skill covers and when to use it.
 
-**Prerequisites**: [If applicable, list prerequisite skills]
+**When using this skill, begin by stating:** "I'm using the [skill-name] skill, which [brief description of what it enforces or provides]."
+
+<!-- For core skills with references, add: -->
+**Context**: This skill covers [activity] across all [trackers/domains/frameworks].
+For [tracker/domain/framework]-specific guidance, see the references/ directory.
+
+<!-- For extension skills, replace the Context line with: -->
+<!-- **Prerequisites**: This skill extends [Base Skill](../base-skill/SKILL.md).
+Use this extension when [specific scenario]. -->
 
 ## Core Principles
 
@@ -49,6 +57,14 @@ Example code or content
 
 Description and example.
 
+### Example: [Scenario Name]
+
+[Setup/context for the example]
+
+[Example code or content]
+
+[Explanation of what the example demonstrates]
+
 ## Common Mistakes
 
 1. ❌ **Mistake** - Why it's wrong
@@ -61,11 +77,31 @@ Description and example.
 
 [Optional: Summary or cheat sheet]
 
-## Integration with Other Skills
+<!-- Choose ONE of the following two sections based on skill type: -->
+
+## References
+
+<!-- For core skills with references — list each reference file and when to read it: -->
+- **[Reference Name](references/reference-name.md)** - When/why to read it
+
+<!-- OR for extension/standalone skills that compose with other skills: -->
+## Related Skills
 
 Use this skill with:
 - **[Skill A](../skill-a/SKILL.md)** - When/why
 - **[Skill B](../skill-b/SKILL.md)** - When/why
+```
 
-Together, these provide [complete coverage].
+---
+
+## Reference File Template
+
+For files in `references/`, use this header:
+
+```markdown
+# [Reference Title]
+
+**When using this reference, state:** "I'm applying [reference-name] guidance: [key principles]."
+
+[Content]
 ```
