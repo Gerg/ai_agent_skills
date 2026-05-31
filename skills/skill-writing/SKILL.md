@@ -163,7 +163,7 @@ disable-model-invocation: false (optional, default false)
 - `license` - License name or reference to a bundled license file
 - `compatibility` - Environment requirements (system packages, network access, etc.)
 - `metadata` - Arbitrary key-value mapping for additional metadata
-- `disable-model-invocation` - When `true`, the skill is only included when explicitly invoked. When `false` (default), agents automatically apply it based on context.
+- `disable-model-invocation` - When `true`, the skill is only included when explicitly invoked. When `false` (default), agents automatically apply it based on context. Set to `true` when the skill is too broad to auto-trigger reliably, requires explicit user opt-in (e.g., agent-session-retro), or overlaps significantly with another skill causing redundant triggering.
 
 ### Essential Sections
 
@@ -259,10 +259,6 @@ Show what *not* to do, with explanations.
    
    ✅ Instead: Create focused, single-concern skills with references for variants
 ```
-
-### Link Between Skills and References
-
-For linking templates (extensions, references, related skills), see [TEMPLATE.md](references/TEMPLATE.md).
 
 ## Skill Organization
 

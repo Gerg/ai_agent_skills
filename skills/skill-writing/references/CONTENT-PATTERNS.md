@@ -1,8 +1,8 @@
 # Content Patterns for Skills
 
-Detailed patterns for structuring skill content effectively.
+Patterns for organizing skill references and structuring skill content. Covers how to split a skill into references (when, and by what axis) and how to structure the content itself (workflows, feedback loops, output templates).
 
-**When using this reference, state:** "I'm applying skill content patterns: workflows, feedback loops, and template structures."
+**When using this reference, state:** "I'm applying skill patterns: reference splitting, workflows, feedback loops, and output templates."
 
 ## Contents
 
