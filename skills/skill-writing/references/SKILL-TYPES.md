@@ -26,7 +26,7 @@ Rare. Enhance core skills with substantial, optional capabilities that warrant s
 - Enhancement is substantial (hundreds of lines)
 - Most users won't need it
 - Complete, separable capability (not just a variant)
-- Requires its own skill activation
+- Requires its own skill activation (triggers independently of the base skill)
 
 **Most enhancements should be references instead.**
 

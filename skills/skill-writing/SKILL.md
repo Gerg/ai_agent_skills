@@ -10,7 +10,7 @@ A meta-skill for creating effective skill documents using progressive disclosure
 
 **When using this skill, begin by stating:** "I'm using the skill-writing skill to create/review skills following progressive disclosure principles."
 
-**Note**: This skill is 643 lines, exceeding the 500-line recommendation. This is acceptable because it's used during skill creation (not regular development), so context window pressure is lower. The comprehensive guidance in one place is more valuable than strict adherence to the line limit.
+**Context**: This skill covers skill authoring for all skill types (core, extension, reference files). For step-by-step creation, see [CREATION-PROCESS.md](references/CREATION-PROCESS.md). For the copy-paste template, see [TEMPLATE.md](references/TEMPLATE.md).
 
 ## What is a Skill?
 
@@ -91,93 +91,21 @@ Each skill should focus on one concern or outcome. Use progressive disclosure (r
 
 ### 5. When to Create Separate Skills vs Use References
 
-**When to create separate skills:**
+- **Separate skills**: For orthogonal concerns — different activities or outcomes (e.g., `deployment/` vs `deployment-rollback/`)
+- **References**: For variants within a concern — different tools, domains, or frameworks (e.g., `story-writing/references/jira-markup.md`)
+- **Extensions**: Rare — only when the enhancement is substantial, optional, and requires its own skill activation
 
-Create separate skills for **orthogonal concerns** - fundamentally different types of work or outcomes:
-
-✅ Separate skills:
-- `story-writing/` vs `pr-review/` - Different activities
-- `agent-issue-tracking/` vs `issue-tracking-jira/` - Different outcomes (AI agent coordination vs human team tracking)
-- `deployment/` vs `deployment-rollback/` - Different outcomes (deploy vs undo)
-
-**When to use references:**
-
-Use `references/` subdirectories for **variants within a concern** - different contexts or domains for the same type of work:
-
-✅ Use references:
-- `story-writing/references/jira-markup.md` - Tracker-specific formatting
-- `story-writing/references/cloud-foundry-api.md` - Domain-specific patterns
-- `pr-review/references/ruby-patterns.md` - Language-specific conventions
-
-**When to use extensions:**
-
-Extensions are rare - most enhancements should be references. Only create extensions when the enhancement is substantial and optional.
-
-Consider extensions when:
-- The enhancement is a complete, separable capability (not just a variant)
-- The enhancement is substantial (hundreds of lines)
-- Most users won't need the enhancement
-- The enhancement requires its own skill activation
-
-**Example (if truly substantial):**
-```
-pr-review/ (core process with references for language patterns)
-    +
-pr-review-security-audit/ (optional, substantial security-focused extension)
-    =
-Enhanced PR review with security audit
-```
-
-**Most cases should use references instead:**
-- Scope validation → `pr-review/references/scope-validation.md`
-- Consistency checking → `pr-review/references/consistency-patterns.md`
-- Language-specific patterns → `pr-review/references/ruby.md`
+See [SKILL-TYPES.md](references/SKILL-TYPES.md) for the full taxonomy with examples and counter-examples.
 
 ### 6. Clear Prerequisites and Context
-State what other skills are required and guide users to relevant references.
-
-**For core skills:**
-```markdown
-**Context**: This skill covers story writing across all trackers and domains.
-For tracker-specific formatting, see the references/ directory.
-For domain-specific patterns, see the appropriate reference file.
-```
-
-**For extension skills:**
-```markdown
-**Prerequisites**: This skill extends [PR Review](../pr-review/SKILL.md).
-Use this extension when validating PR scope against detailed acceptance criteria.
-```
+State what other skills are required and guide users to relevant references. Use a `**Context**:` statement for core skills and a `**Prerequisites**:` statement for extensions — see [TEMPLATE.md](references/TEMPLATE.md) for the exact format.
 
 ### 7. Avoid Duplication
 Use references for domain-specific content and shared resources for multi-skill content.
 
-**For domain-specific variants within a skill:**
-```markdown
-## Domain-Specific Patterns
+When the same content applies to multiple skills, use symlinks to a shared source rather than copying — see [Skill Organization → Shared Resources](#shared-resources) for the full pattern.
 
-For domain-specific story patterns:
-- **Cloud Foundry API**: See [references/cloud-foundry-api.md](references/cloud-foundry-api.md)
-- **Kubernetes**: See [references/kubernetes.md](references/kubernetes.md)
-```
-
-**For universal content used by multiple skills:**
-Use shared resources with symlinks (see Skill Organization → Shared Resources):
-```
-_shared/code-quality.md  ← Single source of truth
-    ↓ symlink
-code-development/references/code-quality.md
-pr-review/references/code-quality.md
-```
-
-❌ Bad:
-```markdown
-## Cloud Foundry API Patterns
-[Repeating all CAPI patterns in main SKILL.md]
-
-## Code Quality (duplicated in multiple skills)
-[Same content copied to code-development and pr-review]
-```
+❌ Bad: copying the same content into two skill files — maintenance burden, guaranteed divergence.
 
 ### 8. Generic Over Specific
 Keep skills applicable across contexts. Extract project-specific details.
@@ -238,128 +166,24 @@ disable-model-invocation: false (optional, default false)
 
 ### Essential Sections
 
-#### 1. Title and Purpose
-```markdown
-# [Skill Name] Skill
+Use [TEMPLATE.md](references/TEMPLATE.md) as the authoritative template for skill structure. The one section requiring explicit guidance:
 
-Brief description of what this skill covers and when to use it.
-```
+#### Skill Affirmation
 
-#### 2. Skill Affirmation
-
-**Required for all skills.** Add immediately after the context statement:
+**Required for all skills and all reference files.** This makes skill usage visible — it confirms the agent loaded the skill and sets expectations for the user.
 
 ```markdown
 **When using this skill, begin by stating:** "I'm using the [skill-name] skill, which [brief description of what it enforces or provides]."
 ```
 
-**Purpose:**
-- Makes skill usage visible to users
-- Confirms the agent loaded the skill
-- Sets expectations about the approach being used
-- Helps users understand why the agent is taking a particular approach
+Write the affirmation to name the specific behaviors the skill enforces, not just what topic it covers:
 
-**Examples:**
-```markdown
-**When using this skill, begin by stating:** "I'm using the code-development skill, which enforces opinionated best practices: minimal comments, full test coverage, test pressure for all logic, and matching existing patterns."
-
-**When using this skill, begin by stating:** "I'm using the story-writing skill to write well-structured user stories with Given/When/Then acceptance criteria."
-
-**When using this skill, begin by stating:** "I'm using the pr-review skill to conduct a systematic code review with empirical validation."
-```
-
-**For reference files:**
-Add affirmation at the top of all reference files:
-```markdown
-**When using this reference, state:** "I'm applying [reference-name] guidance: [key principles]."
-```
-
-#### 3. Context and Navigation (if applicable)
-
-**For core skills with references:**
-```markdown
-**Context**: This skill covers [activity] across all [trackers/domains/frameworks].
-For [tracker/domain/framework]-specific guidance, see the references/ directory.
-```
-
-**For extension skills:**
-```markdown
-**Prerequisites**: This skill extends [Base Skill](../base-skill/SKILL.md).
-Use this extension when [specific scenario].
-```
-
-#### 3. Core Principles or Overview
-High-level concepts and philosophy.
-
-```markdown
-## Core Principles
-
-1. **Principle 1** - Explanation
-2. **Principle 2** - Explanation
-3. **Principle 3** - Explanation
-```
-
-#### 4. Main Content
-Organized by topic, pattern, or use case.
-
-**Common Structures:**
-- **By Pattern**: Common patterns and how to apply them
-- **By Type**: Different types of scenarios
-- **By Phase**: Sequential steps or stages
-- **Reference**: Comprehensive reference material
-
-#### 5. Examples
-Concrete, realistic examples throughout.
-
-```markdown
-### Example: [Scenario Name]
-
-[Setup/context]
-
-[Example code/content]
-
-[Explanation]
-```
-
-#### 6. Common Mistakes
-What to avoid, with examples.
-
-```markdown
-## Common Mistakes
-
-1. ❌ **Mistake description** - Why it's wrong
-   ✅ **Correct approach** - How to do it right
-```
-
-#### 7. Integration Guidance
-How this skill works with extensions and references.
-
-**For core skills with references:**
-```markdown
-## Using This Skill
-
-This skill provides universal principles for [activity].
-
-**Tracker-specific guidance:**
-- **Jira**: See [references/jira-markup.md](references/jira-markup.md)
-- **GitHub**: See [references/github-markdown.md](references/github-markdown.md)
-
-**Domain-specific patterns:**
-- **Cloud Foundry**: See [references/cloud-foundry.md](references/cloud-foundry.md)
-- **Kubernetes**: See [references/kubernetes.md](references/kubernetes.md)
-```
-
-**For extension skills:**
-```markdown
-## Integration
-
-**Prerequisites**: This skill extends [Base Skill](../base-skill/SKILL.md).
-
-Use this extension when [specific scenario requiring the extension].
-```
+✅ `"...which enforces opinionated best practices: minimal comments, full test coverage, test pressure for all logic"`
+❌ `"...to help with code development"`
 
 ### Optional Sections
 
+- **Common Mistakes** - What to avoid, with ❌/✅ examples (see [ANTI-PATTERNS.md](references/ANTI-PATTERNS.md) for skill-writing anti-patterns)
 - **Quick Reference** - Cheat sheet or summary
 - **Workflows** - Multi-step processes with checklists (see [Content Patterns](references/CONTENT-PATTERNS.md))
 - **Templates** - Output format templates (see [Content Patterns](references/CONTENT-PATTERNS.md))
@@ -658,101 +482,11 @@ The `README.md` should:
 - Provide quick start guides
 - Show how to use skills together (e.g., pr-review + agent-issue-tracking)
 
-## Agent Collaboration on Skills
+## References
 
-When AI agents work on skills, they should collaborate effectively with users on key decisions.
-
-**For detailed guidance on:**
-- When to prompt for decisions vs. make autonomous decisions
-- How to present decision options
-- Ticket decomposition patterns
-
-**See:** [Agent Collaboration Reference](references/AGENT-COLLABORATION.md)
-
-## Creating a New Skill
-
-**For step-by-step guidance on:**
-- Identifying the need
-- Defining scope
-- Choosing structure
-- Drafting content
-- Quality review
-- Maintenance
-
-**See:** [Skill Creation Process](references/CREATION-PROCESS.md)
-
-## Quality Checklist
-
-### Content Quality
-- [ ] Clear, focused purpose
-- [ ] Appropriate scope (not too broad or narrow)
-- [ ] Concrete examples provided
-- [ ] Anti-patterns documented
-- [ ] Prescriptive guidance (not just options)
-- [ ] Sharp and opinionated (would agent behave differently with this skill?)
-- [ ] Consistent terminology
-- [ ] No unnecessary jargon
-- [ ] Skill affirmation statement present
-
-### Structure Quality
-- [ ] Logical organization
-- [ ] Clear heading hierarchy
-- [ ] Consistent formatting
-- [ ] Easy to scan
-- [ ] Quick reference available (if needed)
-- [ ] No duplicate content between sections
-- [ ] Each concept explained once
-- [ ] Cross-references used instead of repetition
-
-### Integration Quality
-- [ ] Context clearly stated (for core skills)
-- [ ] Prerequisites clearly stated (for extensions)
-- [ ] References well-organized and linked
-- [ ] Navigation to references provided
-- [ ] Links to related skills (different concerns)
-- [ ] Affirmation statements in all reference files
-
-### Usability Quality
-- [ ] Easy to find (good naming)
-- [ ] Easy to understand (clear writing)
-- [ ] Easy to apply (actionable guidance)
-- [ ] Easy to reference (good structure)
-
-## Reference Materials
-
-**For detailed information:**
-- **[Skill Template](references/TEMPLATE.md)** - Copy-paste template for new skills
-- **[Skill Types](references/SKILL-TYPES.md)** - Core skills, extensions, and references
-- **[Content Patterns](references/CONTENT-PATTERNS.md)** - Workflows, feedback loops, and templates
-- **[Anti-Patterns](references/ANTI-PATTERNS.md)** - Common mistakes and how to avoid them
-
-## Best Practices
-
-1. **Start small** - Begin with core content, expand over time
-2. **Get feedback** - Test with real users, iterate
-3. **Keep it current** - Update as practices evolve
-4. **Link generously** - Connect related skills
-5. **Show examples** - Concrete beats abstract
-6. **Be prescriptive** - Give clear guidance, not just options
-7. **Stay focused** - One skill, one concern
-8. **Use references** - Split variants into references/
-9. **Document mistakes** - Learn from errors
-10. **Maintain quality** - Regular reviews and updates
-
-## Additional Resources
-
-- **[Agent Skills Standard](https://agentskills.io/)** - Official specification for the Agent Skills format
-- **[Agent Skills Specification](https://agentskills.io/specification)** - Complete format specification for SKILL.md files
-- **[Anthropic's Example Skills](https://github.com/anthropics/skills)** - Browse example skills on GitHub
-
-## Meta-Note
-
-This skill itself follows the principles it describes:
-- **Focused**: Only covers skill creation
-- **Extensible**: Uses references/ for detailed guidance
-- **Prescriptive**: Provides clear guidance
-- **Generic**: No project-specific details
-- **Reusable**: Applies to any skill creation
-- **Conforms to standard**: Follows the [Agent Skills specification](https://agentskills.io/specification)
-
-Use this skill as a template for creating new skills in your knowledge base.
+- **[TEMPLATE.md](references/TEMPLATE.md)** - Copy-paste template for new skills
+- **[SKILL-TYPES.md](references/SKILL-TYPES.md)** - Core skills, extensions, and references with examples and counter-examples
+- **[CREATION-PROCESS.md](references/CREATION-PROCESS.md)** - Step-by-step creation guide and quality checklist
+- **[CONTENT-PATTERNS.md](references/CONTENT-PATTERNS.md)** - Workflows, feedback loops, and template patterns
+- **[ANTI-PATTERNS.md](references/ANTI-PATTERNS.md)** - Common mistakes to avoid
+- **[AGENT-COLLABORATION.md](references/AGENT-COLLABORATION.md)** - When to prompt vs. decide autonomously when working on skills
