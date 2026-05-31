@@ -10,7 +10,7 @@ A meta-skill for creating effective skill documents using progressive disclosure
 
 **When using this skill, begin by stating:** "I'm using the skill-writing skill to create/review skills following progressive disclosure principles."
 
-**Context**: This skill covers skill authoring for all skill types (core, extension, reference files). For step-by-step creation, see [CREATION-PROCESS.md](references/CREATION-PROCESS.md). For the copy-paste template, see [TEMPLATE.md](references/TEMPLATE.md).
+**Context**: This skill covers skill authoring for all skill types (core, extension, reference files). Read references on demand — see the [References](#references) section at the bottom for when to load each one.
 
 ## What is a Skill?
 
@@ -484,9 +484,12 @@ The `README.md` should:
 
 ## References
 
-- **[TEMPLATE.md](references/TEMPLATE.md)** - Copy-paste template for new skills
-- **[SKILL-TYPES.md](references/SKILL-TYPES.md)** - Core skills, extensions, and references with examples and counter-examples
-- **[CREATION-PROCESS.md](references/CREATION-PROCESS.md)** - Step-by-step creation guide and quality checklist
-- **[CONTENT-PATTERNS.md](references/CONTENT-PATTERNS.md)** - Workflows, feedback loops, and template patterns
-- **[ANTI-PATTERNS.md](references/ANTI-PATTERNS.md)** - Common mistakes to avoid
-- **[AGENT-COLLABORATION.md](references/AGENT-COLLABORATION.md)** - When to prompt vs. decide autonomously when working on skills
+Load these on demand — only when the task requires it:
+
+- **[TEMPLATE.md](references/TEMPLATE.md)** — Read when **creating or structuring a new skill**
+- **[SKILL-TYPES.md](references/SKILL-TYPES.md)** — Read when **deciding whether to create a separate skill, add a reference, or create an extension**
+- **[CREATION-PROCESS.md](references/CREATION-PROCESS.md)** — Read when **creating a new skill from scratch** or **running a quality review on an existing one**
+- **[CONTENT-PATTERNS.md](references/CONTENT-PATTERNS.md)** — Read when **implementing workflows, feedback loops, or output templates**, or when **deciding how to split a large skill into references**
+- **[ANTI-PATTERNS.md](references/ANTI-PATTERNS.md)** — Read when **reviewing a skill for common mistakes**
+- **[AGENT-COLLABORATION.md](references/AGENT-COLLABORATION.md)** — Read when **deciding whether to prompt the user for a decision or proceed autonomously**
+- **[ORGANIZATION.md](references/ORGANIZATION.md)** — Read when **setting up the file structure, naming, or shared resources for a skill**
