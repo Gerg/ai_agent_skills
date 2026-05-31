@@ -8,7 +8,7 @@ license: Apache-2.0 (see LICENSE file)
 
 A meta-skill for creating effective skill documents using progressive disclosure.
 
-**When using this skill, begin by stating:** "I'm using the skill-writing skill to create/review skills following progressive disclosure principles."
+**When using this skill, begin by stating:** "I'm using the skill-writing skill, which enforces: <500-line SKILL.md, conditional reference loading with explicit 'when to read' conditions, and sharpness — guidance must change agent behavior or it doesn't belong."
 
 **Context**: This skill covers skill authoring for all skill types (core, extension, reference files). Read references on demand — see the [References](#references) section at the bottom for when to load each one.
 
