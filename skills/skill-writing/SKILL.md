@@ -217,7 +217,7 @@ The skill should contain only what an agent needs to execute the task, not auxil
 
 ### Progressive Disclosure
 
-**Progressive disclosure is the primary pattern for managing skill complexity.** Skills use a three-level loading system to manage context efficiently:
+**Progressive disclosure is the primary pattern for managing skill complexity.** Skills use a three-level loading system:
 
 1. **Metadata (name + description)** - Always in context (~100 words)
 2. **SKILL.md body** - When skill triggers (<500 lines recommended)
@@ -231,67 +231,15 @@ The skill should contain only what an agent needs to execute the task, not auxil
 - Detailed reference material (markup guides, API patterns)
 - Conditional features (advanced topics, troubleshooting)
 
-**Splitting patterns:**
-
-**Pattern 1: Tracker/tool-specific details**
-```
-story-writing/
-├── SKILL.md (core principles + navigation)
-└── references/
-    ├── jira-markup.md
-    ├── github-markdown.md
-    └── linear-formatting.md
-```
-
-When user works in Jira, agent reads only jira-markup.md.
-
-**Pattern 2: Domain/platform-specific patterns**
-```
-story-writing/
-├── SKILL.md (universal principles + navigation)
-└── references/
-    ├── cloud-foundry-api.md
-    ├── kubernetes.md
-    └── aws.md
-```
-
-When user asks about Cloud Foundry, agent reads only cloud-foundry-api.md.
-
-**Pattern 3: Framework/language variants**
-```
-testing/
-├── SKILL.md (testing principles + navigation)
-└── references/
-    ├── rspec.md
-    ├── jest.md
-    └── pytest.md
-```
-
-When user works with Ruby, agent reads only rspec.md.
-
-**Pattern 4: Conditional details**
-```markdown
-# SKILL.md
-
-## Basic Usage
-[Core instructions]
-
-## Advanced Features
-For advanced features, see:
-- **Feature X**: See [references/feature-x.md](references/feature-x.md)
-- **Feature Y**: See [references/feature-y.md](references/feature-y.md)
-```
-
-Agent loads reference files only when needed.
+For splitting patterns (tracker-specific, domain-specific, framework variants, conditional details), see [CONTENT-PATTERNS.md](references/CONTENT-PATTERNS.md).
 
 **Guidelines:**
 - Keep SKILL.md focused on universal principles and navigation
 - Put tracker/domain/framework-specific content in references/
 - Keep references one level deep (link directly from SKILL.md)
 - For files >100 lines, include table of contents at top
-- Reference files clearly from SKILL.md with context about when to read them
-- Prefer references over creating separate skills for variants
-- **Reference files should be command references, not tutorials** - Assume agents understand concepts from main SKILL.md; references provide syntax, options, and quick examples only
+- Reference files clearly from SKILL.md with context about **when** to read them
+- **Reference files should be command references, not tutorials** — assume agents understand concepts from SKILL.md; references provide syntax, options, and quick examples only
 
 ### Content Patterns
 

@@ -6,9 +6,58 @@ Detailed patterns for structuring skill content effectively.
 
 ## Contents
 
+- [Reference Splitting Patterns](#reference-splitting-patterns)
 - [Workflows and Checklists](#workflows-and-checklists)
 - [Feedback Loops](#feedback-loops)
 - [Template Patterns](#template-patterns)
+
+## Reference Splitting Patterns
+
+Use these patterns when a skill is approaching the 500-line limit or has content that only applies in specific contexts.
+
+**Pattern 1: Tracker/tool-specific details**
+```
+story-writing/
+├── SKILL.md (core principles + navigation)
+└── references/
+    ├── jira-markup.md
+    ├── github-markdown.md
+    └── linear-formatting.md
+```
+Load condition: "Read jira-markup.md when working in Jira." Agent reads only the relevant file.
+
+**Pattern 2: Domain/platform-specific patterns**
+```
+story-writing/
+├── SKILL.md (universal principles + navigation)
+└── references/
+    ├── cloud-foundry-api.md
+    ├── kubernetes.md
+    └── aws.md
+```
+Load condition: "Read cloud-foundry-api.md when writing Cloud Foundry stories."
+
+**Pattern 3: Framework/language variants**
+```
+testing/
+├── SKILL.md (testing principles + navigation)
+└── references/
+    ├── rspec.md
+    ├── jest.md
+    └── pytest.md
+```
+Load condition: "Read rspec.md when working in Ruby."
+
+**Pattern 4: Conditional details**
+```markdown
+## Advanced Features
+For advanced features, see:
+- **Feature X**: Read [references/feature-x.md](references/feature-x.md) when doing X
+- **Feature Y**: Read [references/feature-y.md](references/feature-y.md) when doing Y
+```
+Agent loads the reference only when the specific feature is needed.
+
+**Key rule**: Always tell the agent *when* to load a reference, not just *what* it contains. "Read X when Y" is more useful than "X contains Y."
 
 ## Workflows and Checklists
 
