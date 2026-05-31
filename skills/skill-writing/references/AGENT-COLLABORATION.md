@@ -7,9 +7,8 @@ Guidance for AI agents working on skills with users.
 ## Contents
 
 - [When to Prompt for Decisions](#when-to-prompt-for-decisions)
-- [When to Make Autonomous Decisions](#when-to-make-autonomous-decisions)
-- [Presenting Options](#presenting-options)
-- [Ticket Decomposition](#ticket-decomposition)
+- [How to Present Decision Options](#how-to-present-decision-options)
+- [Validating Decisions](#validating-decisions)
 
 ## When to Prompt for Decisions
 
@@ -72,50 +71,3 @@ Even after making autonomous decisions:
 
 If you prefer a different approach, I can refactor."
 ```
-
-## Making Work Visible with Ticket Decomposition
-
-**When working on skills, decompose work into trackable tickets:**
-
-**Anti-pattern - Single Large Ticket:**
-```
-Ticket: "Fix status code issues in CF skills"
-- Review 2 files
-- Make 6 different changes
-- Update README
-
-Problem: Hard to track, can't parallelize, unclear progress
-```
-
-**Better - Decomposed Tickets:**
-```
-Parent: "Fix status code issues in CF skills"
-├─ Child: "Review api-story-writing.md for status code issues"
-├─ Child: "Review cli-story-writing.md for status code issues"
-├─ Child: "Remove 409 Conflict from api-story-writing.md"
-├─ Child: "Replace HTTP Status Codes section with style guide reference"
-├─ Child: "Update CLI exit codes to reference style guide"
-└─ Child: "Update README.md descriptions"
-
-Benefits: Clear progress (3/6 done), can parallelize, trackable
-```
-
-**Pattern: Analysis → Child Tickets**
-1. Create analysis/review ticket
-2. Do analysis work
-3. Create child tickets for each finding
-4. Work through child tickets
-5. Close parent when all children done
-
-**When to decompose:**
-- Multiple independent files/components
-- Multiple distinct issues found
-- Work can be parallelized
-- Want granular progress tracking
-
-**When to keep single ticket:**
-- Changes are tightly coupled
-- Task is simple and quick
-- Splitting adds overhead
-
-See [Agent Issue Tracking](../../agent-issue-tracking/SKILL.md) for implementation details.
