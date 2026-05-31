@@ -59,6 +59,7 @@ A **skill** is a reusable knowledge document that provides structured guidance o
 - Use imperatives, not suggestions ("Do X" not "Consider X" or "You might want to X")
 - Be specific about what to do and what not to do
 - Include concrete examples and anti-patterns
+- Explain the *why* behind directives — "Avoid X because it causes Y" not just "Avoid X"
 - Don't soften language during editing ("avoid X" stays "avoid X", not "consider avoiding X")
 - When extracting from existing guidance (AGENTS.md, team docs), preserve the original wording
 - User feedback on skills comes from hard-won experience - don't dull the edge when incorporating it
