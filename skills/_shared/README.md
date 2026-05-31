@@ -57,6 +57,38 @@ Git handles symlinks well:
 - Cloning the repo preserves symlinks on Unix/Mac
 - On Windows, git may check out symlinks as text files containing the link path (depending on git config)
 
+## Multi-Source Considerations
+
+The `_shared/` pattern works well for single skill repositories but presents challenges when managing skills from multiple sources:
+
+### Dependency Discovery
+
+There's currently no standard way to know which skills depend on `_shared/` without examining their `references/` directories for symlinks. Skills that reference shared resources will have broken references if `_shared/` is missing.
+
+**Current skills with `_shared/` dependencies:**
+- `code-development` → `_shared/code-quality.md`
+- `pr-review` → `_shared/code-quality.md`
+
+### Namespace Collisions
+
+If multiple skill repositories use `_shared/`, their shared resources could conflict when merged into a single discovery location. For example:
+- Repository A has `_shared/testing-patterns.md`  
+- Repository B also has `_shared/testing-patterns.md`
+- When both are installed to `~/.cursor/skills/`, the second overwrites the first
+
+### Recommendations
+
+**For skill installation:**
+- Always symlink entire skill directories when possible (avoids missing dependencies)
+- Use separate discovery locations for different skill sources
+- Use tools like [stow](https://www.gnu.org/software/stow/) for namespace management
+
+**For future evolution:**
+The Agent Skills standard may need to address:
+- Shared dependency declaration in skill metadata
+- Namespace management for multi-source installations
+- Standardized shared resource patterns across different skill repositories
+
 ## Alternatives Considered
 
 **Cross-skill references** (e.g., `../pr-review/references/code-quality.md`):
@@ -74,3 +106,4 @@ Git handles symlinks well:
 - ✅ Natural references
 - ✅ Clear shared status
 - ✅ Easy maintenance
+- ⚠️ Requires coordination across skill sources
