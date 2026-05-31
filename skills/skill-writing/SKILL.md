@@ -303,53 +303,6 @@ For detailed guidance on structuring skill content:
 
 See [Content Patterns](references/CONTENT-PATTERNS.md) for detailed patterns and examples.
 
-### Use Clear Headings
-Organize with a clear hierarchy:
-- `#` - Skill title
-- `##` - Major sections
-- `###` - Subsections
-- `####` - Minor subsections
-
-### Provide Context
-Explain *why*, not just *what* or *how*.
-
-✅ Good:
-```markdown
-Use descriptive scenario names instead of numbers because they make 
-stories easier to scan and understand at a glance.
-```
-
-❌ Bad:
-```markdown
-Use descriptive scenario names.
-```
-
-### Use Consistent Formatting
-
-**For Examples:**
-```markdown
-### Example: [Name]
-
-[Setup]
-
-```
-[Code/content]
-```
-
-[Explanation]
-```
-
-**For Comparisons:**
-```markdown
-✅ Good: [example]
-❌ Bad: [example]
-```
-
-**For Lists:**
-- Use bullets for unordered items
-- Use numbers for sequential steps
-- Use checkboxes for checklists
-
 ### Include Anti-Patterns
 Show what *not* to do, with explanations.
 
@@ -365,32 +318,8 @@ Show what *not* to do, with explanations.
 ```
 
 ### Link Between Skills and References
-Create clear navigation between skills and to reference materials.
 
-**Linking to extensions (rare):**
-```markdown
-## Extensions
-
-This skill can be enhanced with:
-- **[Security Audit](../pr-review-security-audit/SKILL.md)** - Add comprehensive security-focused review
-```
-
-**Linking to references:**
-```markdown
-## Domain-Specific Patterns
-
-For domain-specific guidance:
-- **Cloud Foundry API**: [references/cloud-foundry-api.md](references/cloud-foundry-api.md)
-- **Kubernetes**: [references/kubernetes.md](references/kubernetes.md)
-```
-
-**Linking to related skills:**
-```markdown
-## Related Skills
-
-- **[Agent Issue Tracking](../agent-issue-tracking/SKILL.md)** - Track findings during review
-- **[Story Writing](../story-writing/SKILL.md)** - Write stories for identified issues
-```
+For linking templates (extensions, references, related skills), see [TEMPLATE.md](references/TEMPLATE.md).
 
 ## Skill Organization
 

@@ -79,6 +79,12 @@ Description and example.
 
 <!-- Choose ONE of the following two sections based on skill type: -->
 
+## Extensions
+
+<!-- For skills that can be enhanced with optional extensions (rare): -->
+This skill can be enhanced with:
+- **[Extension Name](../extension-skill/SKILL.md)** - What it adds and when to use it
+
 ## References
 
 <!-- For core skills with references — list each reference file and when to read it: -->
