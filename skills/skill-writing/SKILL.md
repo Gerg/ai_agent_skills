@@ -103,7 +103,7 @@ State what other skills are required and guide users to relevant references. Use
 ### 7. Avoid Duplication
 Use references for domain-specific content and shared resources for multi-skill content.
 
-When the same content applies to multiple skills, use symlinks to a shared source rather than copying — see [Skill Organization → Shared Resources](#shared-resources) for the full pattern.
+When the same content applies to multiple skills, use symlinks to a shared source rather than copying — see [ORGANIZATION.md](references/ORGANIZATION.md) for the full pattern.
 
 ❌ Bad: copying the same content into two skill files — maintenance burden, guaranteed divergence.
 
@@ -243,13 +243,7 @@ For splitting patterns (tracker-specific, domain-specific, framework variants, c
 
 ### Content Patterns
 
-For detailed guidance on structuring skill content:
-
-**Workflows and Checklists** - For multi-step processes with progress tracking
-**Feedback Loops** - For validate → fix → repeat patterns
-**Template Patterns** - For strict vs flexible output templates
-
-See [Content Patterns](references/CONTENT-PATTERNS.md) for detailed patterns and examples.
+See [CONTENT-PATTERNS.md](references/CONTENT-PATTERNS.md) for workflows, feedback loops, template patterns, and reference splitting patterns.
 
 ### Include Anti-Patterns
 Show what *not* to do, with explanations.
