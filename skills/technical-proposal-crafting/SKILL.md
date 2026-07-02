@@ -1,5 +1,5 @@
 ---
-name: technical-proposal
+name: technical-proposal-crafting
 description: Write, review, and edit technical design proposals — both High-Level Designs (HLDs, for alignment/approval) and Low-Level Designs (LLDs, for implementation). Use when drafting, restructuring, reviewing, or editing a design doc, architecture proposal, RFC, or "tech spec"; when deciding what belongs in a high-level vs low-level document; when a proposal must be approved by an architect/lead or hand work to other teams; or when grounding design claims against an existing codebase. Covers audience targeting, document structure, decision/alternatives framing, and rigorously grounding claims in source.
 ---
 
@@ -7,7 +7,7 @@ description: Write, review, and edit technical design proposals — both High-Le
 
 Write, review, and edit design proposals that drive alignment (HLD) and guide implementation (LLD).
 
-**When using this skill, begin by stating:** "I'm using the technical-proposal skill, which enforces: right altitude for the audience, a narrative that builds a case rather than filing a report, each fact stated once, explicit status tagging (IMPLEMENTED/WIRING-ONLY/NET-NEW), and confident voice throughout."
+**When using this skill, begin by stating:** "I'm using the technical-proposal-crafting skill, which enforces: right altitude for the audience, a narrative that builds a case rather than filing a report, each fact stated once, explicit status tagging (IMPLEMENTED/WIRING-ONLY/NET-NEW), and confident voice throughout."
 
 **Context**: This skill covers writing, reviewing, and editing both High-Level and Low-Level design proposals across any domain. For document-type specifics, read `references/hld.md` and `references/lld.md`. For the discipline of grounding claims, read `references/claim-grounding.md`. Read references on demand.
 

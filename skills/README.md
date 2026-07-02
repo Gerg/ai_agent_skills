@@ -158,7 +158,7 @@ Write user-facing technical documentation for software features.
 
 ---
 
-### [Technical Proposal](technical-proposal/SKILL.md)
+### [Technical Proposal Crafting](technical-proposal-crafting/SKILL.md)
 Write, review, and edit technical design proposals (HLDs and LLDs).
 
 **Core content:**
@@ -275,7 +275,7 @@ Only the needed content is loaded, not all 1,307 lines.
 - Agent helps distinguish when to use commands vs skills
 
 **Writing a technical proposal:**
-- Enable `technical-proposal/`
+- Enable `technical-proposal-crafting/`
 - Agent will identify whether you need an HLD, LLD, or both
 - Agent loads relevant references (writing-workflow, hld/lld, claim-grounding) as needed
 
@@ -330,10 +330,10 @@ Only the needed content is loaded, not all 1,307 lines.
 
 ### Writing a Technical Proposal
 
-1. Enable `technical-proposal/` skill
+1. Enable `technical-proposal-crafting/` skill
 2. Describe what you're designing and who must approve it
 3. Agent loads:
-   - `technical-proposal/SKILL.md` (core principles + activities)
+   - `technical-proposal-crafting/SKILL.md` (core principles + activities)
    - `references/writing-workflow.md` (step-by-step checklist)
    - `references/hld.md` (if writing/reviewing an HLD)
    - `references/claim-grounding.md` (if grounding claims against existing code)
