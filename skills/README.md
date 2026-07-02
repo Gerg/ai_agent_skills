@@ -158,6 +158,26 @@ Write user-facing technical documentation for software features.
 
 ---
 
+### [Technical Proposal](technical-proposal/SKILL.md)
+Write, review, and edit technical design proposals (HLDs and LLDs).
+
+**Core content:**
+- Core principles (right altitude, narrative arc, fact-once, explicit status tagging, confident voice)
+- Choosing HLD vs LLD (comparison table + rule of thumb)
+- Activities framing (writing, reviewing, editing)
+- Reviewing a Proposal (audience lenses: approver, PM, engineer, operator, security)
+- Common Mistakes (9 anti-patterns with ❌/✅ examples)
+
+**References (loaded as needed):**
+- `references/writing-workflow.md` - Step-by-step writing checklist
+- `references/hld.md` - HLD guidance (section skeleton, sharp rules, litmus tests)
+- `references/lld.md` - LLD guidance (precision norms, status tagging)
+- `references/claim-grounding.md` - Grounding claims against source
+
+**Use when**: Writing, reviewing, or editing a design doc, architecture proposal, RFC, or tech spec
+
+---
+
 ### [Code Development](code-development/SKILL.md)
 Write production code with automated tests following opinionated best practices.
 
@@ -254,6 +274,11 @@ Only the needed content is loaded, not all 1,307 lines.
 - Agent will guide you through creating a simple, focused command
 - Agent helps distinguish when to use commands vs skills
 
+**Writing a technical proposal:**
+- Enable `technical-proposal/`
+- Agent will identify whether you need an HLD, LLD, or both
+- Agent loads relevant references (writing-workflow, hld/lld, claim-grounding) as needed
+
 **Writing documentation:**
 - Enable `doc-writing/`
 - Agent will research implementation, plan structure, and write accurate docs
@@ -302,6 +327,16 @@ Only the needed content is loaded, not all 1,307 lines.
    - `references/TEMPLATE.md` (template)
    - `references/CREATION-PROCESS.md` (step-by-step guide)
    - Other references as needed
+
+### Writing a Technical Proposal
+
+1. Enable `technical-proposal/` skill
+2. Describe what you're designing and who must approve it
+3. Agent loads:
+   - `technical-proposal/SKILL.md` (core principles + activities)
+   - `references/writing-workflow.md` (step-by-step checklist)
+   - `references/hld.md` (if writing/reviewing an HLD)
+   - `references/claim-grounding.md` (if grounding claims against existing code)
 
 ### Writing Cloud Foundry Documentation
 
