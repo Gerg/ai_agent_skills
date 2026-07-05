@@ -1,6 +1,6 @@
 ---
 name: agent-collaboration
-description: Universal guide for agent-user collaboration. Use in all sessions and for all tasks - covers how to collaborate with users, plan work, make decisions, handle errors, and communicate effectively. Always applicable regardless of the specific task or domain.
+description: Universal guide for agent-user collaboration - covers how to collaborate with users, plan work, make decisions, handle errors, and communicate effectively.
 ---
 
 # Agent-User Collaboration
@@ -44,3 +44,4 @@ description: Universal guide for agent-user collaboration. Use in all sessions a
 - **[PR Review](../pr-review/SKILL.md)** - Reviewing code changes
 - **[Story Writing](../story-writing/SKILL.md)** - Writing user stories
 - **[Agent Session Retro](../agent-session-retro/SKILL.md)** - End-of-session retrospectives
+

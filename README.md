@@ -59,6 +59,14 @@ sessions where the skill was performed.
 
 ---
 
+## Enforcement
+
+The `enforcement/` directory contains global rules and hooks that ensure specific skills are always active in each tool, regardless of auto-discovery. The pattern works for any skill — agent-collaboration is the current example.
+
+See [enforcement/README.md](enforcement/README.md) for the pattern and installation instructions.
+
+---
+
 ## AGENTS.md
 
 Learn more about the spec: https://agents.md/
@@ -70,11 +78,7 @@ Instead, this repository maintains a global AGENTS.md file with generic rules, s
 2. Conflicts with repos that already have an AGENTS.md file
 3. Off-spec usage (AGENTS.md is intended for repo-specific rules)
 
-**The content has also been migrated to the `agent-collaboration` skill** (`skills/agent-collaboration/`), which may be automatically discovered by agents that support the [Agent Skills standard](https://agentskills.io/). However:
-- It's uncertain whether a skill can reliably "always trigger" (there's no frontmatter option for this, unlike `disable-model-invocation` for never triggering)
-- This is somewhat off-spec usage of skills (skills are typically task-specific, not universal)
-
-Both AGENTS.md and the agent-collaboration skill are maintained in parallel until the skill approach proves reliable for universal agent behavior guidance.
+**The content is also maintained in the `agent-collaboration` skill** (`skills/agent-collaboration/`), enforced globally via tool-specific mechanisms defined in `enforcement/`.
 
 ### Provenance
 

@@ -20,8 +20,6 @@ Guide for effective collaboration between AI agents and users.
 - Planning and execution patterns (present options, analyze blockers)
 - Communication style (technical, succinct, humble)
 
-**Use when**: Starting a session, planning work, making decisions, or communicating with users
-
 **Provenance**: These principles originated from:
 1. https://www.simplermachines.com/nats-current-prompts/
 2. Human-generated rules in response to AI agent behavior

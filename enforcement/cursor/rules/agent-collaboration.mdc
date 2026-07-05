@@ -1,0 +1,6 @@
+---
+description: Enforce agent-collaboration skill at the start of every session
+alwaysApply: true
+---
+
+Use the agent-collaboration skill.
