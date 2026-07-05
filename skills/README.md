@@ -191,20 +191,6 @@ Write production code with automated tests following opinionated best practices.
 
 ---
 
-### [Gemini Thoroughness](gemini-thoroughness/SKILL.md)
-Enforces complete, production-ready execution and combats lazy or truncated output.
-
-**Core content:**
-- Identity & persistence principles
-- Strategic chunking to prevent truncation
-- Positive execution requirements
-- Banned patterns (placeholders, stubs)
-- Constraint ordering for Gemini models
-
-**Use when**: The agent is using a Gemini model to ensure thorough execution.
-
-**Provenance**: This skill synthesizes Google's official prompting guidance and community workarounds, specifically inspired by https://github.com/Alphasite
-
 ---
 
 ## How Skills Work
